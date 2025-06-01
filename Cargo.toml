@@ -1,7 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "examples/rust", # 6.1.0
+    "dim4-trading",
+    # "examples/rust", # 6.1.0  # Uncomment this and comment above to use default example.
     "yellowstone-grpc-client", # 6.1.0
     "yellowstone-grpc-geyser", # 6.1.0
     "yellowstone-grpc-proto", # 6.1.0
