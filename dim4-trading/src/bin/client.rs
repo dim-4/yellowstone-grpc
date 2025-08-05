@@ -996,7 +996,8 @@ fn create_pretty_account(account: SubscribeUpdateAccountInfo) -> anyhow::Result<
         "owner": Pubkey::try_from(account.owner).map_err(|_| anyhow::anyhow!("invalid account owner"))?.to_string(),
         "executable": account.executable,
         "rentEpoch": account.rent_epoch,
-        "data": hex::encode(account.data),
+        // "data": hex::encode(account.data),
+        "data": bs58::encode(account.data).into_string(),
         "writeVersion": account.write_version,
         "txnSignature": account.txn_signature.map(|sig| bs58::encode(sig).into_string()),
     }))
